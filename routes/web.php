@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('/layouts/master');
-});
+Route::get('/', 'PagesController@getIndex');
+Route::get('about', 'PagesController@getAbout');
+Route::get('contact', 'PagesController@getContact');
