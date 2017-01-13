@@ -22,3 +22,6 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
       return view('pages/contact'); //resources/views/pages/contact.blade.php
   });
+
+
+Route::resource('posts','PostController');
