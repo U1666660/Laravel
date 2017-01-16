@@ -29,7 +29,7 @@
                <th></th>
             </thead>
             <tbody>
-              @foreach ($post as $post)
+              @foreach ($posts as $post)
                 <tr>
                   <th>{{ $post->id }}</th>
                   <td>{{ $post->title }}</td>
@@ -45,6 +45,13 @@
               @endforeach
             </tbody>
         </table>
+        <div class="text-center">
+          {!! $posts->links(); !!}
+
+
+        </div>
+
+
       </div>
     </div>
 
