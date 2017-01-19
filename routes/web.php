@@ -12,6 +12,7 @@
 */
 Route::group(['middleware' => ['web']], function () {
 
+
     // domain.com/blog/slug-goes-here
   Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])
       ->where('slug', '[\w\d\-\_]+');
@@ -21,6 +22,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('about', 'PagesController@getAbout');
   Route::get('/', 'PagesController@getIndex');
   Route::resource('posts','PostController');
+
 });
 
   // Authentication Routes
@@ -32,5 +34,6 @@ Route::group(['middleware' => ['web']], function () {
     // Only authenticated users may enter...
   })->middleware('auth');
 
+
   // Categories
-  Route::resoure('categories', 'CategoryController');
+Route::resource('categories','CategoryController', ['except' => ['create']]);
