@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => 'noreply@yunqingblog.com',
+        'name' => 'Laravel Application Yunqingblog',
     ],
 
     /*

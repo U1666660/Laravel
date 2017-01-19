@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| Email')
+@section('title', '| Forgot My Password')
 
 <!-- Main Content -->
 @section('content')

@@ -23,10 +23,11 @@ Route::group(['middleware' => ['web']], function () {
   Route::resource('posts','PostController');
 });
 
-Auth::routes();
+  // Authentication Routes
+  Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+  Route::get('/home', 'HomeController@index');
 
-Route::get('profile', function () {
+  Route::get('profile', function () {
     // Only authenticated users may enter...
-})->middleware('auth');
+  })->middleware('auth');

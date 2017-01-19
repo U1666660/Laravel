@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '| Password Reset')
+@section('title', '| Forgot My Password')
 
 @section('content')
 
