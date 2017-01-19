@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use App\Category;
@@ -179,6 +179,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
+        $post->tags()->detach();
 
         $post->delete();
 
