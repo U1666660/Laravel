@@ -36,6 +36,7 @@
         <ul class="dropdown-menu" role="menu">
             <li><a href="{{ route('posts.index') }}">Posts</a></li>
             <li><a href="{{ route('categories.index') }}">Categories</a></li>
+            <li><a href="{{ route('tags.index') }}">Tags</a></li>
                 <li><a href="{{ url('/logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
