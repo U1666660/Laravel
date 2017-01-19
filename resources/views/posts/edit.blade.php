@@ -13,6 +13,11 @@
       {{ Form::label('slug', 'Slug:', ['style' => 'margin-top:20px']) }}
       {{ Form::text('slug', null, ['class' => 'form-control']) }}
 
+      {{ Form::label('category_id', 'Category:', ['style' => 'margin-top:20px']) }}
+      {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+
+
+
       {{ Form::label('body', 'Body:', ['style' => 'margin-top:20px']) }}
       {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 
