@@ -31,3 +31,6 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('profile', function () {
     // Only authenticated users may enter...
   })->middleware('auth');
+
+  // Categories
+  Route::resoure('categories', 'CategoryController');
