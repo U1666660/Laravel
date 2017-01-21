@@ -11,6 +11,9 @@ use Session;
 
 class PostController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -98,6 +101,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+
 
       $post = Post::find($id);  // Find the post in the database and save as a var
       $categories = Category::all();
