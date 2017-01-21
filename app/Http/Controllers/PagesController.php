@@ -52,7 +52,7 @@ class PagesController extends Controller {
               $message->subject($data['subject']);
           });
 
-          Session::flash('success', 'Your Email has been Sent.');
+          Session::flash('success', 'Your Email has been sent.');
 
           return redirect('/');
 
