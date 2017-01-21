@@ -3,10 +3,10 @@
 @section('title', '| Contact')
 
 @section('content')
-  
+
 <div class="row">
   <div class="col-md-12">
-    <h1>Contact Me</h1>
+    <h1>Contact Me <span class="glyphicon glyphicon-envelope"></span></h1>
     <hr>
     <form action="{{ url('contact') }}" method="POST">
       {{ csrf_field() }}

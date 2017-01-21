@@ -6,7 +6,7 @@
 
   <div class="row">
       <div class="col-md-10">
-        <h1>All Posts</h1>
+        <h1>All Posts <span class="glyphicon glyphicon-list"></span></h1>
       </div>
 
       <div class="col-md-2">
