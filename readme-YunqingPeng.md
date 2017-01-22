@@ -1,4 +1,4 @@
-<This is branch v1.0>
+This is branch v1.0
 
 Hello! Yunqingblog is my test website built via laravel. you could access Yunqingblog via http://138.68.47.216/ or pengyunqing.com
 
