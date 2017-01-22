@@ -6,7 +6,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <img src="{{asset('images/'.$post->image)}}" alt="This is a image" />
+    <img src="{{ asset('images/'. $post->image) }}"/>
     <h1>{{ $post->title }}</h1>
     <p class="lead">{!! $post->body !!}</p>
     <hr>
@@ -90,9 +90,11 @@
           </div>
 
           <div class="row">
-  					<div class="col-md-12">
-  						{{ Html::linkRoute('posts.index', '<< See All Posts', array(), ['class' => 'btn btn-default btn-block btn-h1-spacing']) }}
-  					</div>
+  					<div class="col-md-12" style="margin-top: 18px">
+
+  						{{ Html::linkRoute('posts.index', '<< See All Posts', array(), ['class' => 'btn btn-default btn-block']) }}
+
+            </div>
   </div>
 
 
