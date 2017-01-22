@@ -3,15 +3,15 @@
 @section('title', '| Home')
 
 @section('content')
-<div class="row">
-        <div class="col-md-12">
-           <div class="jumbotron">
-           <h1>Welcome to My Blog!</h1>
-           <p class="lead">Thank you so much for visiting. This is my test website built with Laravel. Please read my popular post!</p>
-           <p><a class="btn btn-primary btn-lg" href="{{ url('blog') }}" role="button">Popular Post</a></p>
-           </div>
-        </div>
-</div> <!-- end of header .row -->
+  <div class="row">
+          <div class="col-md-12">
+             <div class="jumbotron">
+             <h1>Welcome to My Blog <span class="glyphicon glyphicon-globe" style="margin-right: 15px; margin-bottom:15px;"></span></h1>
+             <p class="lead">This is my first blog site built with Laravel. Hope you like it! Please read my popular post!</p>
+             <p><a class="btn btn-primary btn-lg" href="{{ url('blog') }}" role="button">Popular Post</a></p>
+             </div>
+          </div>
+  </div> <!-- end of header .row -->
 
 <div class="row">
     <div class="col-md-8">
