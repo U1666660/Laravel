@@ -51,6 +51,7 @@
 
   				</select>
 
+
   				{{ Form::label('featured_img', 'Upload a Featured Image') }}
   				{{ Form::file('featured_img') }}
 
