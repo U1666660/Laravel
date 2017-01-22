@@ -21,7 +21,8 @@
 @section('content')
 
   <div class="row">
-		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'files' => true]) !!}
+		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+
 		<div class="col-md-8">
 			{{ Form::label('title', 'Title:') }}
 			{{ Form::text('title', null, ["class" => 'form-control input-lg']) }}
@@ -35,8 +36,6 @@
 			{{ Form::label('tags', 'Tags:', ['class' => 'form-spacing-top']) }}
 			{{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
 
-      {{ Form::lable('featured_image', 'Update Featured Image:', ['class' => 'margin-top: 30px;']) }}
-      {{ Form::file('featured_image') }}
 
 			{{ Form::label('body', "Body:", ['class' => 'margin-top: 30px;']) }}
 			{{ Form::textarea('body', null, ['class' => 'form-control']) }}
@@ -57,7 +56,7 @@
             <hr>
 				        <div class="row">
 					          <div class="col-sm-6">
-						        {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+						        {!! Html::linkRoute('posts.show', 'Cancel', array($post->slug), array('class' => 'btn btn-danger btn-block')) !!}
 					          </div>
 					      <div class="col-sm-6">
 						       {{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}

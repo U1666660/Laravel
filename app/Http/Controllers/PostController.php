@@ -9,7 +9,7 @@ use App\Tag;
 use App\Category;
 use Session;
 use Purifier;
-use Image;
+
 use Storage;
 
 class PostController extends Controller
@@ -70,16 +70,6 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->body);
 
-          // save the image
-          if ($request->hasFile('featured_img')) {
-
-            $image = $request->file('featured_img');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('images/' . $filename);
-
-            Image::make($image)->resize(800, 400)->save($location);
-            $post->image = $filename;
-          }
 
         $post->save();
 
@@ -145,14 +135,24 @@ class PostController extends Controller
         // Validate the data
         $post = Post::find($id);
 
+        if ($request->input('slug') == $post->slug) {
+          $this->validate($request, array(
+            'title' => 'required|max:255',
+            'category_id' => 'required|integer',
+            'body' => 'required',
 
-        $this->validate($request, array(
+          ));
+
+        } else {
+
+          $this->validate($request, array(
           'title' => 'required|max:255',
-          'slug' => "required|alpha_dash|min:5|max:255|unique:posts,slug,$id",
+          'slug' => "required|alpha_dash|min:5|max:255|unique:posts,slug",
           'category_id' => 'required|integer',
           'body' => 'required',
-          'featured_img' => 'image'
+
         ));
+        }
 
 
         // Save the data to the database
@@ -162,21 +162,6 @@ class PostController extends Controller
         $post->slug = $request->input('slug');
         $post->category_id = $request->input('category_id');
         $post->body = Purifier::clean($request->input('body'));
-
-        if ($request->hasFile('featured_img')) {
-          // add the new image
-
-          $image = $request->file('featured_img');
-          $filename = time() . '.' . $image->getClientOriginalExtension();
-          $location = public_path('images/' . $filename);
-
-          Image::make($image)->resize(800, 400)->save($location);
-          $oldFilename = $post->image;
-          // update to database
-          $post->image = $filename;
-          // delete the old image
-          Storage::delete($oldFilename);
-        }
 
 
         $post->save();
@@ -209,8 +194,6 @@ class PostController extends Controller
         //
         $post = Post::find($id);
         $post->tags()->detach();
-        Storage::delete($post->image);
-
 
         $post->delete();
 
