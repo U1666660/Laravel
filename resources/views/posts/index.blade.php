@@ -22,9 +22,9 @@
       <div class="col-md-12">
         <table class="table">
             <thead>
-               <th>#</th>
+               <th>Post ID</th>
                <th>Title</th>
-               <th>body</th>
+               <th>Body</th>
                <th>Created At</th>
                <th></th>
             </thead>
